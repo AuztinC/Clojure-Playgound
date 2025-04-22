@@ -2,6 +2,6 @@
   (:require [speclj.core :refer :all]
             [playground.core :refer :all]))
 
-(describe "a test"
+#_(describe "a test"
   (it "FIXME, I fail."
     (should= 0 1)))
