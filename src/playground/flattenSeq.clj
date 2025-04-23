@@ -7,9 +7,9 @@
 (defn my-flatten [seq]
   (loop [i 0 new-list (list)]
     (if (= (count seq) i)
-      (sort (reverse new-list))
+      (reverse new-list)
       (if (coll? (nth seq i))
-        (recur (inc i) (concat new-list (my-flatten (nth seq i))))
+        (recur (inc i) (concat (reverse (my-flatten (nth seq i))) new-list))
         (recur (inc i) (conj new-list (nth seq i)))
         ))))
 
